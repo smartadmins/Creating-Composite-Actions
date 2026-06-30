@@ -1,4 +1,4 @@
-package com.cloudtechnet;
+package com.smartadmins;
 
 public class App {
 
