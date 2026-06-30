@@ -1,0 +1,28 @@
+name: Java Maven Build Composite Action
+
+description: Setup Java and Build Maven Project
+
+inputs:
+  java-version:
+    description: Java version
+    required: true
+    default: "17"
+
+runs:
+  using: composite
+
+  steps:
+
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: ${{ inputs.java-version }}
+
+    - name: Verify Java
+      shell: bash
+      run: java -version
+
+    - name: Build Maven Project
+      shell: bash
+      run: mvn clean install
