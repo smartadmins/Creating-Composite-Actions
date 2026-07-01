@@ -14,7 +14,7 @@ runs:
   steps:
 
     - name: Setup Java
-      uses: smartadmins/shared-github-actions/java-build@main
+      uses: actions/checkoutv@5
       with:
         distribution: temurin
         java-version: ${{ inputs.java-version }}
